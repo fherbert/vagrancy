@@ -8,6 +8,10 @@ module Vagrancy
       path_maybe_no_traling_slash + (path_maybe_no_traling_slash[-1] == '/' ? '' : '/')
     end
 
+    def access_token
+      YAML.load(File.read(configuration_file_path))['access_token']
+    end
+
     private
 
     def path_maybe_no_traling_slash

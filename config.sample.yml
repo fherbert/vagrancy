@@ -1,1 +1,2 @@
 filestore_path: /var/tmp/vagrancy
+access_token: "secrettoken"

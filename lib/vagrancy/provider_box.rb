@@ -30,7 +30,13 @@ module Vagrancy
     end
 
     def url
-      base_site + '/' + path 
+      vars = @request.params
+      if vars.has_key?('access_token')
+        q = '?access_token=' + vars['access_token']
+      else
+        q = ''
+      end
+      base_site + '/' + path + q
     end
 
     def file_path
